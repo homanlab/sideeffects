@@ -1,0 +1,771 @@
+---
+title             : "Examining side effect variability of antipsychotic \
+                    treatment in schizophrenia spectrum disorders: A \
+                    meta-analysis of variance"
+shorttitle        : "Variability of side effects"
+
+author: 
+  - name          : "Maria S. Neumeier"
+    affiliation   : "1" 
+  - name          : "Stephanie Homan, Ph.D."
+    affiliation   : "1"
+  - name          : "Stefan Vetter, M.D."
+    affiliation   : "1" 
+  - name          : "Erich Seifritz, M.D."
+    affiliation   : "1" 
+  - name          : "John M. Kane, M.D."
+    affiliation   : "2,3,4" 
+  - name          : "Maximilian Huhn, M.D."
+    affiliation   : "5"
+  - name          : "Stefan Leucht, M.D."
+    affiliation   : "5"
+  - name          : "Philipp Homan, M.D., Ph.D."
+    affiliation   : "1,2,3,4*"
+    corresponding : yes    # Define only one corresponding author
+    address       : "University Hospital of Psychiatry Zurich, \
+                      Lenggstrasse 31, \
+                      8032 Zurich, Switzerland" 
+    email         : "philipp.homan@bli.uzh.ch"
+
+affiliation:
+  - id            : "1"
+    institution   : "University Hospital of Psychiatry Zurich, \
+                     Zurich, Switzerland."
+  - id            : "2"
+    institution   : "Center for Psychiatric Neuroscience, \
+                     Feinstein Institute for Medical Research, \
+                     Manhasset, NY, USA."                    
+  - id            : "3" 
+    institution   : "Division of Psychiatry Research, \
+                     Zucker Hillside Hospital, Northwell Health, \
+                     New York, NY, USA."
+  - id            : "4"
+    institution   : "Department of Psychiatry, \
+                     Zucker School of Medicine at Northwell/Hofstra, \
+                     Hempstead, NY, USA."
+  - id            : "5"
+    institution   : "Department of Psychiatry and Psychotherapy, \
+                     Technical University of Munich, \
+	                   School of Medicine, \
+                     Munich, Germany."
+
+
+abstract: |
+  Side effects of `r source("sideeffects_do.R")` antipsychotic 
+  drugs play a key role in non-adherence of treatment in schizophrenia 
+  spectrum disorders (SSD). While clinical observations suggest 
+  that side effect variability between patients may be considerable, 
+  statistical evidence is 
+  required to confirm this. Here, we hypothesized to find larger side effect 
+  variability under treatment compared with control. We included double-blind, 
+  placebo-controlled, randomized controlled trials (RCTs) of adults with 
+  a diagnosis of SSD treated with 1 out of 14 antipsychotics. 
+  Standard deviations of the pre-post treatment differences of weight 
+  gain, prolactin levels, and corrected QT (QTc) times were extracted. 
+  The outcome measure was the variability ratio of treatment to control for 
+  individual antipsychotic drugs and the overall variability ratio of 
+  treatment to control across RCTs. Individual variability ratios were 
+  weighted by the inverse-variance method and entered into a 
+  random-effects model. We included N = `r ntot[3]` patients for weight 
+  gain, N = `r ntot[1]` patients for prolactin levels, and N = `r ntot[2]` 
+  patients for QTc time. Variability ratios (VR) were significantly
+  increased for weight gain (`r parse_vrstat(vrstat[[3]])`) and
+  prolactin levels (`r parse_vrstat(vrstat[[1]])`) but did not
+  reach significance for QTc time (`r parse_vrstat(vrstat[[2]])`).
+  We found marked differences between individual antipsychotics and 
+  increased variability in side effects in patients under treatment 
+  with antipsychotics suggesting that subgroups of patients or 
+  individual patients may benefit from treatment allocation through 
+  stratified or personalized medicine.
+
+
+bibliography  : ["sideeffects.bib", "references.bib"]
+csl           : nature.csl
+
+leftheader    : ""
+fontsize      : 9pt
+draft         : no
+figsintext    : yes
+fig_caption	  : true
+figurelist    : no
+tablelist     : no
+footnotelist  : no
+lineno        : no
+mask          : no
+class         : "jou"            # for pdf change to jou/doc
+output        : papaja::apa6_pdf # for pdf change to apa6_pdf/docx
+header-includes:
+ - \usepackage{libertine}
+ - \captionsetup[figure]{font=footnotesize,labelfont=bf}
+#- \usepackage[printwatermark]{xwatermark}
+#- \usepackage{xcolor}
+# - \newwatermark[allpages,color=gray!30,angle=45,scale=3.5,xpos=0,ypos=0]{CONFIDENTIAL}
+ - \newcommand{\beginsupplement}{\setcounter{table}{0}
+ - \renewcommand{\thetable}{S\arabic{table}}
+ - \setcounter{figure}{0}
+ - \renewcommand{\thefigure}{S\arabic{figure}}}
+#output:
+#  papaja::apa6_pdf:
+#      draftall
+#     citation_package: natbib
+# header-includes:
+#   - \usepackage[numbered]{natbib}
+# bibliostyle   : nature
+---
+	
+```{r global_options, include=FALSE}
+# set global options for output images
+# tidy.opts = margin cutoff point and wraps text to the next line
+knitr::opts_chunk$set(fig.path = "../output/figures/", 
+                      echo = FALSE, warning = FALSE, message = FALSE,
+                      tidy.opts = list(width.cutoff = 72))
+
+# set global options for knitr
+knitr::opts_knit$set(progress = TRUE, verbose = TRUE)
+
+options(tinytex.verbose = TRUE)
+
+```
+
+```{r load_packages, include=FALSE, warning=FALSE, message=FALSE}
+
+fig1 <- "../output/figures/weightsd_fig1.pdf"
+fig2 <- "../output/figures/weightsd_fig2.pdf"
+fig3 <- "../output/figures/prolactinsd_fig1.pdf"
+fig4 <- "../output/figures/prolactinsd_fig2.pdf"
+fig5 <- "../output/figures/qtcsd_fig1.pdf"
+fig6 <- "../output/figures/qtcsd_fig2.pdf"
+
+# for knitting latex to pdf in windows
+Sys.setenv(JAVA_HOME = "C:\\Programme\\Java\\jre1.8.0_171")
+
+```
+
+# Introduction
+Antipsychotics are a fundamental component in the treatment of
+schizophrenia spectrum disorders (SSD). Yet, a major problem are side
+effects which play a key role in non-adherence and
+discontinuation.[@Lambert2004; @Kane2013; @Sendt2015; @Wade2017; 
+@Homan2019k] A common hypothesis among researchers and clinicians alike 
+is that although side effects are pervasive, not all patients are equally
+susceptible, even when they are treated with the same drug.[@Huhn2019]
+However, empirical support for this hypothesis is lacking, as randomized 
+controlled trials (RCTs) or conventional meta-analyses by design cannot 
+answer whether such side effect variability does exist.[@Winkelbeiner2019;
+@Munkholm2020]
+
+While it is well-established that antipsychotics are associated 
+with sides effects for the average patient, the approach we are taking 
+with this study moves beyond comparing group averages but instead 
+compares group variances. By comparing variances our study can 
+for the first time test the hypothesis that there is indeed reason 
+to believe that subgroups or even individual patients differ in 
+their susceptibility to side effects – something that an analysis 
+focused on group averages cannot do.
+
+To date, studies have established the efficacy, safety, and side effect
+profiles of antipsychotic medications by averaging these indices across
+groups of patients. Such studies can provide us with average side effects 
+for specific drugs, but they cannot tell us anything about individual 
+patients or subgroups.[@Senn2016; @Senn2018] Nevertheless, before searching 
+for potential biomarkers that might predict individual susceptibility, we 
+should first quantify the extent to which such predictors are truly needed. 
+
+An approach to answering this question is to shift the focus from the
+means to the variances of side effects.[@Cortes2019] By comparing the
+variances between treatment and control groups of RCTs,[@Nakagawa2015]
+greater variability in treatment would mean that some patients are more
+susceptible to side effects than others.[@Cortes2019] Note that this
+method[@Mills2020] has recently been applied for 
+antipsychotics,[@Winkelbeiner2019] antidepressants,[@Munkholm2020;
+@Ploderl2019; @Volkmann2020] and brain stimulation,[@Homan2020a] but in 
+the context of treatment effect variability. It is worth noting that these 
+studies found little evidence for treatment effect 
+variability.[@Winkelbeiner2019; @Munkholm2020; @Ploderl2019; @Volkmann2020] 
+Importantly, in the case of pre-post differences used as input for a 
+meta-analysis of variance it is crucial to think carefully about the way 
+the variability ratio is expressed,[@Nakagawa2015; @Volkmann2020; 
+@Volkmann2020a] as the use of the coefficient of variation ratio (CVR) 
+that has been proposed as an alternative of the variability ratio 
+(VR)[@Nakagawa2015] may lead to unreliable results.[@Mills2020; 
+@Volkmann2020a]
+
+A recently published study investigated the individual treatment
+response in antipsychotics and brought surprising
+results.[@Winkelbeiner2019; @Winkelbeiner2019b] By comparing the
+variability between treatment and control groups, no evidence was found
+for an increase in variability in the treatment group. What might sound
+counter-intuitive at first raises the question of how big the need for
+precision medicine really is. However, that study evaluated the evidence
+for treatment effect variability. It is possible that although such
+variability in treatment effects is not as high as sometimes assumed,
+[@Homan2019a] it does exist in the susceptibility for side effects. In
+other words, even if there is little variability in response to treatment
+between patients, there may still be enough variability in side effects to
+justify a need for precision medicine. If true, then this would support
+optimization of treatment allocation with respect to side effect
+profiles.[@Pillinger2020]
+
+Side effects that are particularly relevant to antipsychotic treatment
+include weight gain,[@Homan2019k] hyperprolactinemia, and QTc
+prolongation.[@Pillinger2020] Weight gain is a frequently observed side
+effect that can negatively impact one's physical health and thus may
+also influence treatment adherence. Every additional kilogram of weight
+gain can contribute to an increased risk of heart
+failure,[@Kenchaiah2002] cardiovascular disease,[@Willett1995] and
+diabetes.[@Cooper2016] In addition, treatment discontinuation is often
+seen in patients with increase of weight under treatment.[@Mustafa2018]
+High prolactin levels can lead to symptoms like decreased bone mass,
+gallactorhea, and fertility problems in men and women. Further possible
+symptoms include menstrual disturbances in female patients and decreased
+libido and erectile dysfunction in male patients.[@Thapa2020] These
+symptoms are frequent, but often underreported by patients and unnoticed
+as well as untreated by clinicians.[@Montejo2010; @Serretti2011] They
+furthermore might lead to loss in quality of life and might be a reason
+for treatment discontinuation[@Heald2010; @Lambert2004] and subsequent
+illness relapse, which together with persistent positive symptoms
+[@Homan2012a; @Cavelti2018; @Cavelti2018a; @Winkelbeiner2018a] may severely
+impact recovery and therapeutic alliance.[@Cavelti2016] Prolongation of
+QTc was observed in 7 of 14 antipsychotics compared by placebo in the
+inter-group comparison by Huhn and colleagues.[@Huhn2019] Importantly,
+*torsade de pointes* tachycardia and sudden cardiac death are possible
+severe consequences of QTc prolongation.[@Funk2020] Such cardiac events
+are one of the factors that lead to the loss of life expectancy observed
+in patients with SSD.[@Glassman2005; @Vandael2017; @Koponen2008]
+
+In summary, antipsychotic side effects are highly relevant for
+long-term outcome and adherence in treatment of positive symptoms in
+SSD.  The question remains whether variability in side effects is high
+enough to warrant efforts of treatment stratification or
+personalisation. If there is little or no evidence for variability in
+side effects there might not be a need for stratification or personalization
+and the already widely available data provided by
+intergroup comparisons might offer reasonable estimates for the
+individual patient. Thus, we compared the variances of side effects
+including weight gain, prolactin level and QTc-time between treatment
+and control groups to address this question and to evaluate the
+evidence for the presence of side effect variability. Based on the
+clinical impression that patients seem to vary in their susceptibility
+to side effects, we hypothesized that the variability in side effects
+would be higher in the treatment compared with the control groups
+across all published trials of antipsychotics in SSD.[@Huhn2019]
+
+# Methods
+## Search strategy and selection criteria
+We used the data from the recent meta-analysis by Huhn and
+colleagues.[@Huhn2019] That study included placebo-controlled published
+and unpublished trials investigating orally administered atypical
+(second generation) antipsychotics and typical (first generation) 
+antipsychotics in adults with schizophrenia spectrum disorders; and
+excluded patients with first episode psychosis, treatment resistance,
+mainly negative symptoms, comorbidity with other mental or physical
+illnesses and relapse-prevention studies. Long- and short-acting
+intramuscular injections were also excluded (as they are often used in
+relapse prevention or emergency treatment) and studies from mainland
+China were excluded because of data quality concerns.[@Tong2018]
+Data sources were MEDLINE, Cochrane Central Register of Controlled Trials
+(CENTRAL), Embase, Biosis, PsycINFO, PubMed, ClinicalTrials.gov, WHO
+International Clinical Trials Registry Platform and the US Food and Drug
+Administration until January 8 2019. Data quality and validity were
+ensured by following the PRISMA guidelines.[@Hutton2015] For missing
+data, we also contacted study authors.
+
+We decided to investigate weight gain, prolactin elevation and 
+QTc prolongation because these side effects are particularly relevant, 
+[@Pillinger2020; @Homan2019k] and quantifiable metric data were 
+available in most studies. Other side effects such as 
+extrapyramidal motor symptoms (EPS), sedation and diabetes can be 
+equally burdensome and certainly pose a health risk to patients. 
+However, those have often not been quantified in studies but rather 
+assessed qualitatively (e.g. through categorical variables such as 
+EPS: yes/no; sedation: yes/no; diabetes: treated/untreated). 
+These types of variables did not allow us to estimate variability 
+and so we had to restrain from including them in the analysis.
+
+For the analysis, we used the standard deviations of pre-post
+differences in side effects. The primary outcome was the 
+overall variability ratio of side effects in treatment versus control groups.
+Standard deviations (SD) and number of patients (N) were
+extracted for weight gain, prolactin level and QTc time. The units used
+were kg for weight gain, ng/mL for prolactin levels, and ms for QTc
+time. Some studies provided data for all of the three side effects,
+whereas the majority of the studies contained less data (see Results).
+
+## Statistical analysis
+If patients or subgroups differ in their susceptibility to side effects,
+we would expect to observe increased variances in the treatment
+compared with the control group. To test this, we computed the log
+variability ratio (log VR) by comparing the relative variability of
+side effects under treatment versus control:
+
+$$\textrm{log VR}=\textrm{log}\left(\frac{\textrm{SD}_{\textrm{Tx}}}{\textrm{SD}_{\textrm{Ct}}} \right) +
+\frac{1}{2(n_{\textrm{Tx}}-1)} - \frac{1}{2(n_{\textrm{Ct}}-1)} $$,
+
+where $\textrm{SD}_{\textrm{Tx}}$ was the reported sample SD for side 
+effects under treatment, $\textrm{SD}_{\textrm{Ct}}$ was the reported 
+sample SD for side effects under control, $n_{\textrm{Tx}}$ was the 
+treatment sample size, and $n_{\textrm{Ct}}$ the control sample size. The 
+corresponding sampling variance ($s_{\textrm{log VR}}^2$) for each 
+comparison can be expressed as follows:
+
+$$ s_{\textrm{log VR}}^2 = \frac{1}{2(n_{\textrm{Tx}}-1)} + \frac{1}{2(n_{\textrm{Ct}}-1)}$$.
+
+The individual variability ratios were weighted with the inverse of
+this sampling variance[@Viechtbauer2010] and entered into a 
+random-effects model to quantify the overall variability ratio of side 
+effects. For better interpretability, results were back-transformed from 
+the logarithmic scale. Here, a variability ratio greater than one would 
+indicate a higher side effect variability in treatment compared with 
+control, whereas a variability ratio smaller than one would indicate less 
+side effect variability under treatment compared with control.
+
+## Data and code availability
+The analysis was performed from September 2019 to May 2020, using the
+R package metafor[@Viechtbauer2010](version `r packageVersion("metafor")`). 
+The manuscript was produced with the R packages rmarkdown 
+(version `r packageVersion("rmarkdown")`); represearch 
+(version `r packageVersion("represearch")`; 
+https://github.com/phoman/represearch/);
+knitr (version `r packageVersion("knitr")`); and 
+papaja (version `r packageVersion("papaja")`). 
+All data and code are freely available online to ensure reproducibility at
+https://github.com/homanlab/sideeffects/.
+
+# Results
+## Overall reporting details
+Together, we screened N = `r norigtrials` studies with 14 different 
+antipsychotics from the original meta-analysis by Huhn and 
+colleagues[@Huhn2019] as these studies reported data on at least
+one of the three side effects that we were interested in. Of these studies,
+N = `r sum(!is.na(unique(wgexcl$Study_No)))` 
+(`r round(sum(!is.na(unique(wgexcl$Study_No)))/norigtrials, 2) * 100`%) 
+had missing variance measures despite reported means for at least 
+one of the three side effects. We thus included the N = `r ntrialsincluded` 
+(`r round(ntrialsincluded/norigtrials, 2) * 100`%) studies that did 
+report variance measures for at least one of the side effects of interest.
+
+## Weight gain 
+For weight gain, we included `r nrct[3]` RCTs, yielding `r ncomp[3]` 
+comparisons of antipsychotic drugs with placebo to investigate the individual
+occurrence of weight gain in patients. All together we included 
+N = `r ntot[3]` patients diagnosed with schizophrenia or schizoaffective 
+disorder. There were `r ntottx[3]` (`r round(ntottx[3]/ntot[3], 2) * 100`%) 
+patients randomly allocated to the treatment group, and 
+`r ntotct[3]` (`r round(ntotct[3]/ntot[3], 2) * 100`%) to the placebo
+group. Patients in the treatment group received 1 out of 14 
+investigated antipsychotic drugs. Individual comparisons between 
+drugs across studies indicated marked differences between individual 
+antipsychotics. The VR for chlorpromazine, cariprazine, and sertindole was 
+smaller than 1. The VR for ziprasidone, iloperidone, and brexpiprazole 
+was 1. The VR for asenapine, risperidone, olanzapine, lurasidone, 
+aripiprazol, paliperidone, haloperidol, and quetiapine was greater than 1 
+(`r parse_vrstat(vrstat[[3]])`; Figure \@ref(fig:fig2)). Overall, the 
+variability for weight gain was higher under treatment than
+under control (`r parse_vrstat(vrstat[[3]])`; Figure \@ref(fig:fig1)).
+
+```{r fig2capt}
+fig2capt <- "Variability ratio for weight gain for individual
+antipsychotics. The forest plot shows the VR together with its 95% 
+confidence interval (CI) for treatment versus placebo. All included studies 
+[@Litman2016;@Garcia2009;@Clark1972;@Kahn2007;
+@Ogasa2013;@Davidson2007;@Durgam2016;@Coppola2011;@Landbloom2017;
+@Kinon2011;@VanKammen1996;@Arvanitis1997;@Ishigooka2018;
+@Correll2015;@Zborowski1995;@Potkin2008;@Nakamura2009;
+@Potkin2007;@Keck1998;@Cutler2010;@Clark1970;@Borison1996;@Ahmed2007;
+@Durgam2015;@Meltzer2007;@Meltzer2004;@Kane2010;@Kane2002;@Hirayasu2010;
+@Daniel1999;@Cooper2000;@Casey2008;@Bugarski2014;@Patil2007;
+@Lieberman2015;@Potkin2003;@Durgam2014;@Nasrallah2013;@Marder2007;
+@Borison1992;@Shen2014;@Kinoshita2016;@McEvoy2007;@Kane2007;@Harvey2013;
+@Meltzer2011;@Canuso2010b;@Potkin2015;@Beasley1996a;@Canuso2010a;
+@Beasley1996b;@Loebel2016;@Litman2014;@Kane2016;@Lindenmayer2008]
+are also listed in Table S1."
+
+```
+
+```{r fig2, include = TRUE, fig.cap = fig2capt}
+knitr::include_graphics(fig2)
+```
+
+## Hyperprolactinemia
+For hyperprolactinemia, we included `r nrct[1]` RCTs, with `r ncomp[1]`
+comparisons of antipsychotic drugs with placebo. All together we
+included N = `r ntot[1]` patients diagnosed with schizophrenia or
+schizoaffective disorder. There were `r ntottx[1]` 
+(`r round(ntottx[1]/ntot[1], 2) * 100`%) patients randomly allocated to 
+the treatment group, and `r ntotct[1]` 
+(`r round(ntotct[1]/ntot[1], 2) * 100`%) to the placebo group. Patients 
+in the treatment group received 1 out of 13 investigated antipsychotic 
+drugs. Individual comparisons between drugs across studies indicated 
+marked differences between individual antipsychotics. The VR for 
+iloperidone and brexpiprazole was smaller than 1. The VR for aripiprazole, 
+asenapine, risperidone, cariprazine, sertindole, quetiapine, ziprasidone, 
+lurasidone, haloperidol, olanzapine, and paliperidone was greater than 1 
+(`r parse_vrstat(vrstat[[1]])`; Figure \@ref(fig:fig4)).
+Overall, the variability for hyperprolactinemia was higher under treatment 
+than under control (`r parse_vrstat(vrstat[[1]])`; Figure \@ref(fig:fig3)). 
+
+```{r fig4capt}
+fig4capt <- "Variability ratio for hyperprolactinemia for individual
+antipsychotics. The forest plot shows the VR together with its 95% 
+confidence interval (CI) for treatment versus placebo. All included studies
+[@Kane2016;@Patil2007;@Kane2015;@Litman2016;
+@Loebel2016;@Potkin2008;@Kahn2007;@Correll2015;@Kinoshita2016;
+@VanKammen1996;@Small1997;@Kinon2011;@Potkin2003;@Arvanitis1997;
+@Durgam2014;@Borison1996;@Schmidt2014;@Meltzer2007;@McEvoy2007;
+@Hirayasu2010;@Casey2008;@Beasley1996a;@Marder2007;@Kane2007;
+@Kane2010;@Durgam2016;@Lindenmayer2008;@Kane2002;@Ishigooka2018;
+@Meltzer2011;@Durgam2015;@Cutler2010;@Harvey2013;@Nasrallah2013;
+@Garcia2009;@Canuso2010a;@Nakamura2009;@Geffen2012;@Canuso2010b;
+@Zimbroff1997;@Zborowski1995;@Beasley1996b;@Potkin2007;
+@Potkin2015;@Davidson2007;@Ogasa2013;@Coppola2011;@Lieberman2015]
+are also listed in Table S1." 
+```
+
+```{r fig4, include = TRUE, fig.cap = fig4capt}
+knitr::include_graphics(fig4)
+```
+
+
+## QTc prolongation
+For QTc prolongation, we included `r nrct[2]` RCTs, with `r ncomp[2]`
+comparisons of antipsychotic drugs with placebo. All together we
+included N = `r ntot[2]` patients diagnosed with schizophrenia or
+schizoaffective disorder. There were `r ntottx[2]` 
+(`r round(ntottx[2]/ntot[2], 2) * 100`%) patients randomly allocated to 
+the treatment group, and `r ntotct[2]` 
+(`r round(ntotct[2]/ntot[2], 2) * 100`%) to the placebo group. Patients 
+in the treatment group received 1 out of 11 investigated antipsychotic 
+drugs. Individual comparisons between drugs across studies indicated
+marked differences between individual antipsychotics 
+(`r parse_vrstat(vrstat[[2]])`; Figure \@ref(fig:fig6)).
+The VR for ziprasidone, brexpiprazole, paliperidone, and olanzapine was 
+smaller than 1. The VR for iloperidone was 1. The VR for risperidone, 
+quetiapine, lurasidone, haloperidol, and sertindole was greater than 1.
+Even though the variability for QTc prolongation was higher under 
+treatment than under control, the difference did not reach statistical 
+significance (`r parse_vrstat(vrstat[[2]])`; Figure \@ref(fig:fig5)).
+
+```{r fig6capt}
+fig6capt <- "Variability ratio for QTC prolongation for individual
+antipsychotics. The forest plot shows the VR together with its 95% 
+confidence interval (CI) for treatment versus placebo. All included studies
+[@Daniel1999;@Correll2015;@Marder2007;
+@Kane2015;@Potkin2007;@Nasrallah2013;@Potkin2003;@Arvanitis1997;
+@Cutler2010;@Potkin2008;@Durgam2014;@Borison1996;@Borison1992;
+@Kane2002;@Meltzer2011;@Patil2007;@Nakamura2009;@Harvey2013;
+@Ogasa2013;@Potkin2015;@Zborowski1995;
+@Lindenmayer2008;@Keck1998;@Garcia2009;@Beasley1996b;
+@Zimbroff1997;@VanKammen1996]
+are also listed in Table S1." 
+
+```
+
+```{r fig6, include = TRUE, fig.cap = fig6capt}
+knitr::include_graphics(fig6)
+```
+
+
+# Discussion
+## Summary
+This study assessed the variability in the three major side effects of
+antipsychotic treatment in schizophrenia spectrum disorders. We
+focused on side effects because their occurrence has a great impact on
+treatment adherence and physical health of patients, and clinical
+experience suggests a potential to improve treatment allocation by
+taking into account the variability in side effect occurrence. We also
+know from clinical trials and meta-analyses that some antipsychotics
+are more associated with specific side effects than others. For
+example, clozapine and olanzapine are strongly associated with weight
+gain,[@Huhn2019; @Homan2018; @Pillinger2020] QTc-time prolongation is
+most distinct in sertindole and amisulpride,[@Huhn2019] and prolactin
+level elevation in paliperidone and risperidone.[@Huhn2019] However,
+these data cannot address the question whether there is variability in
+subgroups or individual patients. Such side effect-by-subgroup or side
+effect-by-patient interaction would be a prime example for the need of
+a more stratified or personalized medicine, respectively, which
+allocates treatments according to side effect profiles of subgroups or
+individual patients. Overall, we found that the variability for weight
+gain and prolactin elevation was indeed significantly increased in
+patients who received treatment compared with those who received
+placebo. For QTc prolongation, the increase was not
+significant. Together, our results suggest that there is indeed marked
+variability in the occurrence of side effects in antipsychotic
+treatment. Variability also differed markedly between individual drugs.
+
+## Reporting
+Altogether we included `r sum(ntot)` patients from `r ntrialsincluded`
+studies. The included studies provided data for treatment with 14 
+antipsychotic drugs for weight gain, 13 antipsychotic drugs 
+for hyperprolactinemia, and 11 antipsychotic drugs for 
+QTc prolongation compared to placebo. Only for about 40% of studies 
+included in a previous meta-analysis[@Huhn2019] variance data for at 
+least one of the side effects of interest (weight gain, prolactin 
+levels, QTc prolongation) were available. In about 62% of the studies 
+included[@Huhn2019] incomplete data existed such that means were reported 
+without a measure of variance. Although we did contact authors for missing 
+data whenever possible, we received missing data only for three studies. 
+In summary, consistent reporting of antipsychotic side effects, 
+specifically with respect to variability measures, is currently missing 
+in the literature and should be improved in future studies.
+
+## Weight gain
+Weight gain, especially for second generation
+antipsychotics,[@Osborn2018] is a severe side effect that can
+contribute to metabolic dysregulation. Importantly, every kg of weight
+gain leads to a linear increase in the risk of cardiovascular
+diseases,[@Willett1995] heart failure,[@Kenchaiah2002] and
+diabetes.[@Cooper2016] Clozapine, olanzapine, zotepine, and sertindole
+have the most severe impact in gaining weight. Some studies showed
+that a lower BMI at baseline[@Gebhardt2009] and sex[@Najar2017] can
+lead to more weight gain, whereas other studies found that male sex
+and higher BMI at baseline are related to a higher risk of metabolic
+disturbances.[@Pillinger2020] Our findings provide evidence that some
+patients are indeed more susceptible to antipsychotic weight gain than
+others, and that this susceptibility varies also between
+medications. For example, for quetiapine we found that patients
+differed in their susceptibility for weight gain while we did not find
+such evidence for olanzapine and brexpiprazole, suggesting a potential
+for stratified or personalized medicine for quetiapine but not
+olanzapine and brexpiprazole. As antipsychotics in the treatment for
+schizophrenia and related diseases is often recommended to be taken as
+a relapse prevention for a longer period,[@Leucht2012a; @Homan2019h]
+patients are likely to gain more weight during their treatment over
+months and years. Together, this suggests that there is a potential to
+improve long-term health and adherence by identifying the subgroups or
+individual patients that are particularly prone to weight
+gain. Preliminary evidence suggests that a dysregulated striatal
+reward circuit contributes to this weight gain
+susceptibility.[@Nielsen2016; @Homan2019k]
+
+## Hyperprolactinemia
+Prolactin level elevations occur in up to 70% of patients[@Inder2011]
+under the treatment with antipsychotics. By blocking dopamine D2
+receptors on lacotroph cells a disinhibition of the synthesis and
+secretion of prolactin is observed.[@BenJonathan2001; @Bushe2010] This
+can lead to both short- and long-term side effects with potentially
+severe impact on patients' health. Typical short-term effects include
+galactorrhea, gynecomastia, menstrual irregularities, and sexual
+dysfunction; a typical long-term result is
+osteoporosis,[@Mazziotti2018; @Byerly2007] and a potentially increased
+risk in developing breast cancer in association with
+hyperprolactinemia.[@Johnston2018; @George2020] Our findings suggest
+that these risks may be particularly relevant for some patients but
+not others, and more relevant for some antipsychotic drugs than
+others. For example, a previous study found that prolactin level
+elevations are more pronounced and more frequent in women than in
+men.[@Veselinovic2011] In addition, some antipsychotics such as
+amisulpride, risperidone, and paliperidone are linked to a greater
+elevation of prolactin.[@Veselinovic2011; @Huhn2019] The striking
+difference between risperidone (for which we did not find evidence for
+significant variability in prolactin elevation) and paliperidone (for
+which we did find such evidence) is puzzling as paliperidone is an
+active metabolite of risperidone, and previous literature suggests
+that paliperidone and risperidone lead to similar elevations in serum
+prolactin concentrations [@Berwaerts2009]. A possible
+explanation is that the level of prolactin can be highly variable
+based on multiple biological and methodological factors such as
+stress, diurnal variation and type of assay performed. However, future
+studies should pay particular attention to differences in
+susceptibility to prolactinemia between these two antipsychotics. In
+summary, and in line with the weight gain findings, our findigns
+suggest that there is a potential to improve long-term health and
+antipsychotic adherence by identifying the subgroups or individual
+patients that are particularly likely to develop prolactin elevations
+under antipsychotic treatment.
+
+## QTc prolongation
+Prolongation of QTc is another important antipsychotic side effect as
+cardiovascular diseases remain the most common cause of natural
+mortality in schizophrenia spectrum disorders.[@Riordan2011] Users of
+antipsychotic medication are reported to have higher rates of sudden
+cardiac death than nonusers.[@Ray2009] Prolongation of QTc (longer
+than 450 ms in men and longer than 470 ms in women, respectively, when
+corrected with Bazetts Formula[@Bazett1997]) can contribute to
+this.[@Funk2020] A prolongation of QTc can lead to *torsade de
+pointes* and subsequently to sudden death.[@Glassman2001;
+@Nielsen2011] The molecular pathway of this side effect is not
+completely understood.[@Spellmann2018] It is known, however, that some
+medications such as sertindole, amisulprid, and ziprasidone lead to
+more QTc prolongation than others.[@Huhn2019] Here, we found increased
+variability for some antipsychotics such as haloperidol in QTc
+prolongation. However, altogether we did not find a statistically
+significant increase in variability for QTc prolongation, potentially
+because a smaller number of studies were available which decreased
+statistical power.
+
+## Limitations and strengths 
+Our meta-analysis had some limitations. First, the occurrence of side
+effects might be a dose-dependent effect which could reflect a
+higher/different VR in some studies. Dose-dependent means and standard 
+deviations are often missing but would be necessary to investigate 
+dose-dependent effects. Second, for QTc, a reduced number of studies was
+available, potentially reducing statistical power to detect a
+significant variability increase. Third, our sample did not include 
+pre-defined subgroups including patients with first-episode psychosis 
+and treatment-resistant patients to create the most homogeneous sample 
+possible. Finally, our method cannot determine
+whether the increased variability is due to variability differences in
+subgroups or individual patients.[@Cortes2019] The particular strength
+of our study is that we included all available studies of antipsychotic
+treatment in SSD reporting variability measures for side effects of
+interest. To our knowledge, this is the first comprehensive study that
+provides evidence for substantial variability in side effects.
+
+## Conclusion
+While we did not find convincing evidence that patients differed in
+their susceptibility to QTc prolongation, we did find such evidence
+for weight gain and prolactin elevation: for half of all
+antipsychotics (7 out of 14) we can assume that subgroups of patients
+or even individual patients would benefit from specific treatment
+allocation through stratified or personalized medicine,
+respectively. Such efforts in precision medicine might be crucial to
+improve adherence and long-term health under antipsychotic treatment.
+
+# Acknowledgements
+The authors thank Majnu John, PhD, for advice on the analysis of the
+current study and Ellen Ji, PhD, for her thoughtful comments on the
+manuscript. These individuals received no additional compensation,
+outside of their usual salary, for their contributions.
+
+# Funding/Support
+PH is supported by a NARSAD grant from the Brain & Behavior Research
+Foundation (28445) and by a Research Grant from the Novartis Foundation
+(20A058).
+
+# Conflict of interest
+In the last 3 years Dr. Leucht has received honoraria for service as a
+consultant or adviser and/or for lectures from Angelini, Böhringer
+Ingelheim, Geodon&Richter, Janssen, Johnson&Johnson, Lundbeck, LTS
+Lohmann, MSD, Otsuka, Recordati, SanofiAventis, Sandoz, Sunovion,
+TEVA. Dr. Kane reported grants from Otsuka, Lundbeck and Janssen, as
+well as other from Alkermes, Allergan, Forum, Genentech, Lundbeck,
+Intracellular Therapies, Janssen, Johnson & Johnson, Merck, Neurocrine,
+Otsuka, Pierre Fabre, Reviva, Roche, Sunovion, Takeda, Teva, Vanguard
+Research Group, and LB Pharmaceuticals outside of the submitted work. No
+other disclosures were reported.
+
+# Author contributions
+MSN co-analyzed and interpreted the data, wrote the first draft of the
+manuscript and revised the final manuscript. SH conceptualized the
+study, wrote the primary analysis code and revised the final
+manuscript. SV helped initiate the study and revised the final
+manuscript. ES helped initiate the study and revised the final
+manuscript. JMK helped initiate the study and revised the final
+manuscript. MH collected the data and revised the final manuscript. SL
+conceptualized the study and revised the final manuscript. PH initiated,
+conceptualized and supervised the study, performed the statistical
+analysis, and revised the final manuscript. All authors approved the
+final version of the manuscript.
+
+# References
+<div id = "refs"></div> 
+
+\onecolumn
+\clearpage
+\beginsupplement
+
+# Supplementary Information
+## Supplementary Table
+
+```{r}
+wglw <- wgl%>%
+  dplyr::filter(index%in% c("weightsd", "prolactinsd", "qtcsd"))
+wglw$bk <- ""
+wglw$bk[!is.na(wglw$bibkey)] <- wglw$bibkey[!is.na(wglw$bibkey)]
+wglw <- wglw%>%
+  spread(key=index, value=val)
+wglw$Weight <- ifelse(!is.na(wglw$weightsd), "Yes", "No")
+wglw$Prolactin <- ifelse(!is.na(wglw$prolactinsd), "Yes", "No")
+wglw$QTc <- ifelse(!is.na(wglw$qtcsd), "Yes", "No")
+wglu <- wglw%>%
+  #filter(drug=="Placebo")%>%
+  dplyr::select(id, arm, bk, year, n, drug, Weight, Prolactin, QTc)%>%
+  distinct(arm, .keep_all=TRUE)%>%
+  mutate(Study=paste0(id, "[@", bk, "]"))%>%
+  dplyr::select(Study, year, n, drug, Weight, Prolactin, QTc)%>%
+  dplyr::arrange(-year) %>%
+  dplyr::rename(
+           `Study Arm`=Study,
+           Year=year,
+           `Sample Size`=n,
+           Drug=drug
+         )
+
+#knitr::kable(wglu, format="markdown", longtable=TRUE,
+#                  booktabs=TRUE,
+#      caption = "All included study arms with references") 
+
+#kableExtra::kable_styling(latex_options=c("hold_position",
+#                                          "repeat_header"))
+
+knitr::kable(wglu,
+             format="pandoc",
+             caption="All study arms with references")
+
+```
+
+\clearpage
+
+## Supplementary Figures
+
+```{r fig1capt}
+fig1capt <- "Variability ratio for weight gain. The forest 
+plot shows the VR together with its 95% confidence interval (CI) for 
+treatment versus placebo. All included studies
+[@Litman2016;@Garcia2009;@Clark1972;@Kahn2007;
+@Ogasa2013;@Davidson2007;@Durgam2016;@Coppola2011;@Landbloom2017;
+@Kinon2011;@VanKammen1996;@Arvanitis1997;@Ishigooka2018;
+@Correll2015;@Zborowski1995;@Potkin2008;@Nakamura2009;
+@Potkin2007;@Keck1998;@Cutler2010;@Clark1970;@Borison1996;@Ahmed2007;
+@Durgam2015;@Meltzer2007;@Meltzer2004;@Kane2010;@Kane2002;@Hirayasu2010;
+@Daniel1999;@Cooper2000;@Casey2008;@Bugarski2014;@Patil2007;
+@Lieberman2015;@Potkin2003;@Durgam2014;@Nasrallah2013;@Marder2007;
+@Borison1992;@Shen2014;@Kinoshita2016;@McEvoy2007;@Kane2007;@Harvey2013;
+@Meltzer2011;@Canuso2010b;@Potkin2015;@Beasley1996a;@Canuso2010a;
+@Beasley1996b;@Loebel2016;@Litman2014;@Kane2016;@Lindenmayer2008]
+are also listed in Table S1."
+```
+
+```{r fig1, include = TRUE, fig.cap = fig1capt}
+knitr::include_graphics(fig1)
+```
+
+```{r fig3capt}
+fig3capt <- "Variability ratio for hyperprolactinemia. The forest 
+plot shows the VR together with its 95% confidence interval (CI) for 
+treatment versus placebo. All included studies
+[@Kane2016;@Patil2007;@Kane2015;@Litman2016;
+@Loebel2016;@Potkin2008;@Kahn2007;@Correll2015;@Kinoshita2016;
+@VanKammen1996;@Small1997;@Kinon2011;@Potkin2003;@Arvanitis1997;
+@Durgam2014;@Borison1996;@Schmidt2014;@Meltzer2007;@McEvoy2007;
+@Hirayasu2010;@Casey2008;@Beasley1996a;@Marder2007;@Kane2007;
+@Kane2010;@Durgam2016;@Lindenmayer2008;@Kane2002;@Ishigooka2018;
+@Meltzer2011;@Durgam2015;@Cutler2010;@Harvey2013;@Nasrallah2013;
+@Garcia2009;@Canuso2010a;@Nakamura2009;@Geffen2012;@Canuso2010b;
+@Zimbroff1997;@Zborowski1995;@Beasley1996b;@Potkin2007;
+@Potkin2015;@Davidson2007;@Ogasa2013;@Coppola2011;@Lieberman2015]
+are also listed in Table S1." 
+```
+
+```{r fig3, include = TRUE, fig.cap = fig3capt}
+knitr::include_graphics(fig3)
+```
+
+```{r fig5capt}
+fig5capt <- "Variability ratio for QTc prolongation. The forest 
+plot shows the VR together with its 95% confidence interval (CI) for 
+treatment versus placebo. All included studies 
+[@Daniel1999;@Correll2015;@Marder2007;
+@Kane2015;@Potkin2007;@Nasrallah2013;@Potkin2003;@Arvanitis1997;
+@Cutler2010;@Potkin2008;@Durgam2014;@Borison1996;@Borison1992;
+@Kane2002;@Meltzer2011;@Patil2007;@Nakamura2009;@Harvey2013;
+@Ogasa2013;@Potkin2015;@Zborowski1995;
+@Lindenmayer2008;@Keck1998;@Garcia2009;@Beasley1996b;
+@Zimbroff1997;@VanKammen1996]
+are also listed in Table S1." 
+
+```
+
+```{r fig5, include = TRUE, fig.cap = fig5capt}
+knitr::include_graphics(fig5)
+```
