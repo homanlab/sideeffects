@@ -1,0 +1,144 @@
+studynumber,id,arm,year,drug,n,qtcm,qtcsd,qtcn,qtcextraction,qtcsdorigin,FullStudyName,corr_auth,corr_auth_email,other_email,answer_after_1_mail,bibkey,treatment
+4686,Ishigooka 2018,78381,2018,Placebo,116,,,,,,"Ishigooka J, Inada T, Miura S. Olanzapine versus haloperidol in the treatment of patients with chronic schizophrenia: Results of the japan multicenter, double-blind olanzapine trial. Psychiatry & clinical Neurosciences2001",Dr Tadori,tadori.yoshihiro@otsuka.jp,,,Ishigooka2018,control
+4686,Ishigooka 2018,78421,2018,Brexpiprazole,228,,,,,,,,,,,Ishigooka2018,active
+2798,Litman 2016,7675,2016,Placebo,55,,,,,,"Litman RE, Smith MA, Doherty JJ et al.AZD8529, a positive allosteric modulator at the mGluR2 receptor, does not improve symptoms in schizophrenia: A proof of principle study. Abstracts of the 4th Biennial Schizophrenia International Research Conference2016","Dr Litman, Dr Zukin","relitman@cbhhealth.com, stephen.zukin@frx.com",,,Litman2016,control
+2798,Litman 2016,7676,2016,Risperidone,31,,,,,,,,,,,Litman2016,active
+331,NCT01104766a,700,2015,Placebo,153,,,,,,"Durgam S, Cutler AJ, Lu K et al.Cariprazine in acute exacerbation of schizophrenia: A fixed-dose, phase 3, randomized, double-blind, placebo-and active-controlled trial. Journal of clinical Psychiatry2015",Dr Durgam,suresh.durgam@actavis.com,falscher Kontakt Allergan kontaktiert,noch keine Antwort von Allergan erhalten,Durgam2015,control
+331,NCT01104766a,699,2015,Aripiprazole,152,,,,,,,,,,,Durgam2015,active
+331,NCT01104766b,76206,2015,Cariprazine,312,,,,,,,,,,,Durgam2015,active
+978,Lieberman 2015,3198,2015,Placebo,85,,,,,,"Lieberman JA, Davis RE, Correll CU et al.ITI-007 for the treatment of schizophrenia: A 4-week randomized, double-blind, controlled trial. Biol Psychiatry2015",Dr Vanover,kvanover@intracellulartherapies.com,,,Lieberman2015,control
+978,Lieberman 2015,3199,2015,Risperidone,82,,,,,,,,,,,Lieberman2015,active
+1033,Kane 2015,3340,2015,Placebo,184,3.5,18,168,change,original,,,,,,Kane2015a,control
+1033,Kane 2015,76209,2015,Brexpiprazole,370,1.21420454545455,17.513891319178,352,change,original,,,,,,Kane2015a,active
+1056,Correll 2015,3392,2015,Placebo,184,0.9,18.5,170,change,original,,,,,,Correll2015,control
+1056,Correll 2015,76210,2015,Brexpiprazole,362,0.222448979591837,15.7762754256417,343,change,original,,,,,,Correll2015,active
+1406,NCT01098110,4158,2015,Placebo,174,,,,,,"Kinoshita T, Bai YM, Kim JH, Miyake M, Oshima N. Efficacy and safety of asenapine in asian patients with an acute exacerbation of schizophrenia: A multicentre, randomized, double-blind, 6-week, placebo-controlled study. Psychopharmacology2016",Dr Kinoshita,kinoshit@takii.kmu.ac.jp,,,Kinoshita2016,control
+1406,NCT01098110,76211,2015,Asenapine,358,,,,,,,,,,,Kinoshita2016,active
+1408,NCT01617187a,4163,2015,Asenapine,113,,,,,,"Landbloom R, Mackle M, Wu X et al.Asenapine for the treatment of adults with an acute exacerbation of schizophrenia: Results from a randomized, double-blind, fixed-dose, placebo-controlled trial with olanzapine as an active control. CNS Spectr2016",Dr McIntyre,roger.mcintyre@uhn.ca,,,Landbloom2017,active
+1408,NCT01617187a,4165,2015,Placebo,103,,,,,,,,,,,Landbloom2017,control
+1408,NCT01617187b,4164,2015,Olanzapine,46,,,,,,,,,,,Landbloom2017,active
+1415,NCT00905307a,4180,2015,Aripiprazole,50,,,,,,"Kane JM, Skuban A, Hobart M et al.Overview of short-and long-term tolerability and safety of brexpiprazole in patients with schizophrenia. Schizophrenia Research2016",Dr Kane,JKane2@NSHS.edu,,,Kane2016,active
+1415,NCT00905307a,4185,2015,Placebo,95,,,,,,,,,,,Kane2016,control
+1415,NCT00905307b,4183,2015,Brexpiprazole,90,,,,,,,,,,,Kane2016,active
+3017,Loebel 2015a,7985,2015,Lurasidone,199,,,,,,"Loebel A, Silva R, Goldman R et al.Lurasidone dose escalation in early nonresponding patients with schizophrenia: A randomized, placebo-controlled study. J Clin Psychiatry2016",Dr Loebel,antony.loebel@sunovion.com,,,Loebel2016,active
+3017,Loebel 2015a,8166,2015,Placebo,112,,,,,,,,,,,Loebel2016,control
+280,Litmann 2014,591,2014,Placebo,41,,,,,,"Litman RE, Smith MA, Desai DG, Simpson T, Sweitzer D, Kanes SJ. The selective neurokinin 3 antagonist azd2624 does not improve symptoms or cognition in schizophrenia: A proof-of-principle study. Journal of clinical Psychopharmacology2014",Dr Litman,relitman@cbhhealth.com,,,Litman2014,control
+280,Litmann 2014,590,2014,Olanzapine,22,,,,,,,,,,,Litman2014,active
+394,Schmidt 2014,836,2014,Olanzapine,93,,,,,,,,,,,Schmidt2014,active
+601,Shen 2014,2965,2014,Placebo,78,,,,,,"Shen JH, Zhao Y, Rosenzweig-Lipson S et al.A 6-week randomized, double-blind, placebo-controlled, comparator referenced trial of vabicaserin in acute schizophrenia. Journal of Psychiatric Research2014",Dr Williamns,jwilliams@medavante.com,,,Shen2014,control
+601,Shen 2014,2964,2014,Olanzapine,77,,,,,,,,,,,Shen2014,active
+649,Durgam 2014a,2423,2014,Placebo,151,-1.4,24.757979667836,151,change,sd estimated from mean of SDs,,,,,,Durgam2014,control
+649,Durgam 2014a,2424,2014,Risperidone,140,5.1,24.757979667836,140,change,sd estimated from mean of SDs,"Durgam S, Starace A, Li D et al.An evaluation of the safety and efficacy of cariprazine in patients with acute exacerbation of schizophrenia: A phase ii, randomized clinical trial. Schizophrenia Research2014",Dr Durgam,suresh.durgam@frx.com,,,Durgam2014,active
+649,Durgam 2014b,76207,2014,Cariprazine,438,-1.9675799086758,24.757979667836,438,change,sd estimated from mean of SDs,,,,,,Durgam2014,active
+674,Geffen 2012,2476,2012,Risperidone,91,,,,,,"Geffen Y, Keefe R, Rabinowitz J, Anand R, Davidson M. Bl-1020, a new gamma-aminobutyric acid-enhanced antipsychotic: Results of 6-week, randomized, double-blind, controlled, efficacy and safety study. Journal of clinical Psychiatry2012",Dr Geffen,yg@avphar.com,falscher Kontakt: neuer Kontakt: Michael.Davidson@sheba.health.gov.il,,Geffen2012,active
+674,Geffen 2012,2475,2012,Placebo,93,,,,,,,,,,,Geffen2012,control
+245,Kinon 2011,505,2011,Olanzapine,62,,,,,,"Kinon BJ, Zhang L, Millen BA et al.A multicenter, inpatient, phase 2, double-blind, placebo-controlled dose-ranging study of ly2140023 monohydrate in patients with dsm-iv schizophrenia. Journal of clinical Psychopharmacology2011",Dr Kinon,Kinon_Bruce@Lilly.com,,,Kinon2011,active
+245,Kinon 2011,506,2011,Placebo,122,,,,,,,,,,,Kinon2011,control
+235,Kane 2010a,483,2010,Haloperidol,115,,,,,,"Kane JM, Cohen M, Zhao J, Alphs L, Panagides J. Efficacy and safety of asenapine in a placebo-and haloperidol-controlled trial in patients with acute exacerbation of schizophrenia. Journal of clinical Psychopharmacology2010",Dr Kane,JKane2@NSHS.edu,,,Kane2010,active
+235,Kane 2010a,484,2010,Placebo,123,,,,,,,,,,,Kane2010,control
+235,Kane 2010b,482,2010,Asenapine,220,,,,,,,,,,,Kane2010,active
+403,Study 006,902,2010,Lurasidone,99,-0.1,22.09,98,change,original,,,,,,Ogasa2013,active
+403,Study 006,903,2010,Placebo,50,2.2,21.24,49,change,original,,,,,,Ogasa2013,control
+404,Study 049a,904,2010,Haloperidol,73,2.1,20.3,66,change,original,,,,,,Potkin2015,active
+404,Study 049a,906,2010,Placebo,72,-1.8,19,68,change,original,,,,,,Potkin2015,control
+404,Study 049b,905,2010,Lurasidone,140,-0.4,21.71,132,change,original,,,,,,Potkin2015,active
+891,Study 196,2996,2010,Placebo,90,5.4,20,90,change,original,,,,,,Nakamura2009,control
+891,Study 196,2995,2010,Lurasidone,90,3.3,20.4,90,change,original,,,,,,Nakamura2009,active
+892,Study 229,2997,2010,Lurasidone,372,2,22.6,359,change,original,,,,,,Nasrallah2013,active
+892,Study 229,2998,2010,Placebo,128,2.2,22.8,120,change,original,,,,,,Nasrallah2013,control
+893,Study 231a,3001,2010,Placebo,116,9,20.6,109,change,original,,,,,,Meltzer2011,control
+893,Study 231a,3000,2010,Olanzapine,123,10,21.6,121,change,original,,,,,,Meltzer2011,active
+893,Study 231b,2999,2010,Lurasidone,239,4.4,20.6,227,change,original,,,,,,Meltzer2011,active
+894,Study 233a,3003,2010,Placebo,122,7.6,19,113,change,original,,,,,,Harvey2013,control
+894,Study 233a,3004,2010,Quetiapine,120,10.4,17.6,107,change,original,,,,,,Harvey2013,active
+894,Study 233b,3002,2010,Lurasidone,246,2.9,20.67,225,change,original,,,,,,Harvey2013,active
+163,Garcia 2009,324,2009,Haloperidol,60,3.03,26.48,60,change,original,"Garcia E, Robert M, Peris F, Nakamura H, Sato N, Terazawa Y. The efficacy and safety of blonanserin compared with haloperidol in acute-phase schizophrenia: A randomized, double-blind, placebo-controlled, multicentre study. CNS Drugs2009",Dr Nakamura,hiroshi-nakamura@ds-pharma.co.jp,,Daten erhalten,Garcia2009,active
+163,Garcia 2009,325,2009,Placebo,64,6.1,20.39,64,change,original,,,,,,Garcia2009,control
+190,Hera 041-021a,383,2009,Asenapine,208,,,,,,"SH. A multicenter, randomized, double-blind, fixed-dose, 6-week trial of the efficacy and safety of asenapine compared with placebo using olanzapine postive control in subjects with an acute exacerbation of schizophrenia. Center for drug evaluation and research",Dr McIntyre,roger.mcintyre@uhn.ca,,,Hera2009a,active
+190,Hera 041-021a,385,2009,Placebo,106,,,,,,,,,,,Hera2009a,control
+190,Hera 041-021b,384,2009,Olanzapine,103,,,,,,,,,,,Hera2009a,active
+191,Hera 041-022,387,2009,Olanzapine,93,,,,,,,,,,,Hera2009b,active
+191,Hera 041-022,388,2009,Placebo,93,,,,,,,,,,,Hera2009b,control
+65,Casey 2008,146,2008,Risperidone,120,,,,,,"Casey DE, Sands EE, Heisterberg J, Yang HM. Efficacy and safety of bifeprunox in patients with an acute exacerbation of schizophrenia: Results from a randomized, double-blind, placebo-controlled, multicenter, dose-finding study. Psychopharmacology2008",Dr Casey,caseyd@ohsu.edu,,hat keine Daten,Casey2008,active
+65,Casey 2008,145,2008,Placebo,119,,,,,,,,,,,Casey2008,control
+633,Cutler 2008a,2382,2008,Ziprasidone,151,6.1,18.6,148,change,original,,,,,"hat keine Daten, nochmals Rückfrage gestellt",Cutler2010,active
+633,Cutler 2008a,2299,2008,Placebo,152,-2,18.2,141,change,original,,,,,"hat keine Daten, nochmals Rückfrage gestellt",Cutler2010,control
+633,Cutler 2008b,2298,2008,Iloperidone,303,7.2,20.2,288,change,original,,,,,"hat keine Daten, nochmals Rückfrage gestellt",Cutler2010,active
+722,Johnson NCT00397033,2590,2008,Paliperidone,209,,,,,,"Canuso C, Lindenmayer JP, Carothers J, Kosik-Gonzalez C, Turkoz I, Schooler N. Randomized, double-blind, placebo-controlled study of two dose ranges of paliperidone er in the treatment of subjects with schizoaffective disorder. Biological Psychiatry2009",Dr Canuso,CCanuso@its.jnj.com,,,Canuso2010a,active
+722,Johnson NCT00397033,2591,2008,Placebo,107,,,,,,,,,,,Canuso2010a,control
+723,Johnson NCT00412373,2593,2008,Placebo,95,,,,,,"Canuso CM, Schooler N, Carothers J et al.Paliperidone extended-release in schizoaffective disorder: A randomized, controlled study comparing a flexible dose with placebo in patients treated with and without antidepressants and/or mood stabilizers. Journal of clinical Psychopharmacology2010",Dr Canuso,CCanuso@its.jnj.com,,,Canuso2010b,control
+723,Johnson NCT00412373,2592,2008,Paliperidone,216,,,,,,,,,,,Canuso2010b,active
+724,Johnson NCT00524043,2594,2008,Paliperidone,70,,,,,,"Coppola D, Melkote R, Lannie C et al.Efficacy and safety of paliperidone extended release 1.5 mg/day-a double-blind, placebo-and active-controlled, study in the treatment of patients with schizophrenia. Psychopharmacology Bulletin2011",Dr Coppola,dcoppol2@its.jnj.com,,,Coppola2011,active
+724,Johnson NCT00524043,2595,2008,Placebo,65,,,,,,,,,,,Coppola2011,control
+776,Lindenmayer 2008,2710,2008,Quetiapine,267,1.4,20.4,213,change,original,,,,,,Lindenmayer2008,active
+776,Lindenmayer 2008,2709,2008,Placebo,84,-2.7,16.6,66,change,original,,,,,,Lindenmayer2008,control
+895,Study 3000a,3007,2008,Placebo,127,-0.3,19.3,116,change,original,,,,,,Potkin2008,control
+895,Study 3000a,3005,2008,Haloperidol,124,1.4,20.5,110,change,original,,,,,,Potkin2008,active
+895,Study 3000b,3006,2008,Iloperidone,124,0.1,20.2,113,change,original,,,,,,Potkin2008,active
+899,Study 3004a,3015,2008,Placebo,156,1.2,19.6,147,change,original,,,,,,Potkin2008,control
+899,Study 3004a,3014,2008,Iloperidone,154,5,19,145,change,original,,,,,,Potkin2008,active
+899,Study 3004b,3016,2008,Risperidone,153,2.4,20.2,136,change,original,,,,,,Potkin2008,active
+900,Study 3005a,3019,2008,Risperidone,157,1.1,22.9,138,change,original,"Potkin SG, Litman RE, Torres R, Wolfgang CD. Efficacy of iloperidone in the treatment of schizophrenia: Initial phase 3 studies. Journal of clinical Psychopharmacology2008",Professor Potkin,sgpotkin@uci.edu,,,Potkin2008,active
+900,Study 3005a,3018,2008,Placebo,160,-2.5,21.3,143,change,original,,,,,,Potkin2008,control
+900,Study 3005b,3017,2008,Iloperidone,389,6.1,20.6,323,change,original,,,,,,Potkin2008,active
+965,Study RGH-MD-03,3162,2008,Placebo,130,,,,,,"Durgam S, Litman RE, Papadakis K, Li D, Nemeth G, Laszlovszky I. Cariprazine in the treatment of schizophrenia: A proof-of-concept trial. International clinical Psychopharmacology2016",Dr Durgam,moc.sivatca@magrud.hserus,,,Durgam2016,control
+965,Study RGH-MD-03,3160,2008,Cariprazine,128,,,,,,,,,,,Durgam2016,active
+992,Cutler 2008a,3239,2008,Placebo,117,-1.79,24.757979667836,117,change,sd estimated from mean of SDs,"Cutler AJ, Kalali AH, Weiden PJ, Hamilton J, Wolfgang CD. Four-week, double-blind, placebo- and ziprasidone- controlled trial of iloperidone in patients with acute exacerbations of schizophrenia. Journal of clinical Psychopharmacology 2008",Dr Curt Wolfgang,kontakt-de@vandapharma.com,unsicherer Kontakt,,Cutler2010,control
+992,Cutler 2008a,76208,2008,Quetiapine,448,1.2575,24.757979667836,447,change,sd estimated from mean of SDs,,,,,,Cutler2010,active
+129,Davidson 2007a,255,2007,Placebo,123,,,,,,"Davidson M, Emsley R, Kramer M et al.Efficacy, safety and early response of paliperidone extended-release tablets (paliperidone er): Results of a 6-week, randomized, placebo-controlled study.[Erratum appears in schizophr res. 2007 nov;96(1-3):273-4]. Schizophrenia Research2007",Dr Davidson,davidso@netvision.net.il,,,Davidson2007,control
+129,Davidson 2007a,253,2007,Olanzapine,128,,,,,,,,,,,Davidson2007,active
+129,Davidson 2007b,254,2007,Paliperidone,125,,,,,,,,,,,Davidson2007,active
+227,Kahn 2007,464,2007,Placebo,118,,,,,,"Kahn RS, Schulz SC, Palazov VD et al.Efficacy and tolerability of once-daily extended release quetiapine fumarate in acute schizophrenia: A randomized, double-blind, placebo-controlled study. Journal of clinical Psychiatry2007",Dr Kahn,rkahn@umcutrecht.nl,,,Kahn2007,control
+227,Kahn 2007,465,2007,Quetiapine,470,,,,,,,,,,,Kahn2007,active
+307,McEvoy 2007b,649,2007,Aripiprazole,206,,,,,,"McEvoy JP, Daniel DG, Carson, W. H., Jr., McQuade RD, Marcus RN. A randomized, double-blind, placebo-controlled, study of the efficacy and safety of aripiprazole 10, 15 or 20 mg/day for the treatment of patients with acute exacerbations of schizophrenia. Journal of Psychiatric Research2007",Dr McEvoy,jpmcevoy@duke.edu,,,McEvoy2007,active
+307,McEvoy 2007b,650,2007,Placebo,108,,,,,,,,,,,McEvoy2007,control
+313,Meltzer 2007a,661,2007,Placebo,149,,,,,,"Meltzer HYBLMHJYPPSNA. A randomized, double-blind, placebo-controlled efficacy and safety study of bifeprunox as treatment for patients with acutely exacerbated schizophrenia: 11th international congress on schizophrenia research; 2007",,,keine Kontakte auffindbar,,Meltzer2007,control
+313,Meltzer 2007a,662,2007,Risperidone,154,,,,,,,,,,,Meltzer2007,active
+734,Kane 2007b,2617,2007,Placebo,127,,,,,,,,,,,Kane2007,control
+734,Kane 2007b,2615,2007,Olanzapine,128,,,,,,"Kane J, Canas F, Kramer M et al.Treatment of schizophrenia with paliperidone extended-release tablets: A 6-week placebo-controlled trial. Schizophrenia Research2007",Dr Kane,JKane2@NSHS.edu,,,Kane2007,active
+734,Kane 2007c,2616,2007,Paliperidone,375,,,,,,,,,,,Kane2007,active
+789,Marder 2007c,2739,2007,Placebo,110,0.5,15.37,105,change,original,,,,,,Marder2007,control
+789,Marder 2007c,2738,2007,Paliperidone,224,0.35,13.34,222,change,original,,,,,,Marder2007,active
+789,Marder 2007d,2737,2007,Olanzapine,110,1.9,16.7,105,change,original,,,,,,Marder2007,active
+829,Patil 2007,2830,2007,Olanzapine,34,4.16,24.757979667836,28,change,sd estimated from mean of SDs,"Patil ST, Zhang L, Martenyi F et al. Activation of mGlu2/3 receptors as a new approach to treat schizophrenia: A randomized phase 2 clinical trial.[Erratum appears in nat med. 2007 oct;13(10):1264]. Nature Medicine 2007",Dr Schoepp,schoepp_darryle_d@lilly.com,falscher Kontakt neu: Dr Monn via rg,,Patil2007,active
+829,Patil 2007,2831,2007,Placebo,63,1.61,24.757979667836,27,change,sd estimated from mean of SDs,,,,,,Patil2007,control
+845,Potkin 2007d,2866,2007,Placebo,62,-1.6,18,58,change,original,,,,,,Potkin2007,control
+845,Potkin 2007d,2867,2007,Risperidone,60,4.4,16.8,57,change,original,,,,,,Potkin2007,active
+845,Potkin 2007c,2865,2007,Asenapine,60,4.6,18.5,57,change,original,,,,,,Potkin2007,active
+843,Potkin 2003a,2859,2003,Aripiprazole,202,-0.67,22.4,194,change,original,,,,,,Potkin2003,active
+843,Potkin 2003a,2860,2003,Placebo,103,-2.18,22.6,103,change,original,,,,,,Potkin2003,control
+843,Potkin 2003b,2861,2003,Risperidone,99,6.31,22.4,95,change,original,,,,,,Potkin2003,active
+231,Kane 2002b,473,2002,Haloperidol,104,1.67,24.757979667836,104,change,sd estimated from mean of SDs,,,,,,Kane2002,active
+418,Study 94202 2002a,940,2002,Aripiprazole,61,-6.6,24,57,change,p-value,2002 S9. Center for drug evaluation and research. Application number 21-436. Medical review(s). http://wwwfdagov 2002,,,keine Kontakte auffindbar,,Study942022002,active
+418,Study 94202 2002a,942,2002,Placebo,64,-4.5,24,61,change,p-value,,,,,,Study942022002,control
+418,Study 94202 2002b,941,2002,Haloperidol,63,-0.7,24,57,change,p-value,,,,,,Study942022002,active
+405,Study 115 2000a,908,2000,Placebo,83,406.2,22.1,75,endpoint,original,2000 S1. Center for drug evaluation and research approval package for application number 20-825. Medical review. http://wwwfdagov 2000,,,keine Kontakte auffindbar,,Study1152000,control
+405,Study 115 2000a,909,2000,Ziprasidone,164,422.6,29.59,156,endpoint,original,,,,,,Study1152000,active
+405,Study 115 2000b,907,2000,Haloperidol,85,410.2,19.4,79,endpoint,original,,,,,,Study1152000,active
+127,Daniel 1999,249,1999,Placebo,92,413.3,40.7,84,endpoint,original,"Daniel DG, Zimbroff DL, Potkin SG, Reeves KR, Harrigan EP, Lakshminarayanan M. Ziprasidone 80 mg/day and 160 mg/day in the acute exacerbation of schizophrenia and schizoaffective disorder: A 6-week placebo- controlled trial. Ziprasidone study group. Neuropsychopharmacology 1999; 20: 491–505",,,keine Kontakte auffindbar,,Daniel1999,control
+127,Daniel 1999,250,1999,Ziprasidone,104,417.2,23.6,102,endpoint,original,,,,,,Daniel1999,active
+14,Arvanitis 1997a,31,1997,Placebo,51,-5,24.757979667836,51,change,sd estimated from mean of SDs,"Arvanitis LA, Miller BG. Multiple fixed doses of Seroquel (quetiapine) in patients with acute exacerbation of schizophrenia: A comparison with haloperidol and placebo. The seroquel trial 13 study group. Biological Psychiatry 1997; 42: 233–46",,,keine Kontakte auffindbar,,Arvanitis1997,control
+14,Arvanitis 1997a,32,1997,Quetiapine,105,2.86,24.757979667836,105,change,sd estimated from mean of SDs,,,,,,Arvanitis1997,active
+14,Arvanitis 1997b,30,1997,Haloperidol,52,4,24.757979667836,52,change,sd estimated from mean of SDs,,,,,,Arvanitis1997,active
+611,Small 1997,2988,1997,Quetiapine,96,,,,,,"Small JG, Hirsch SR, Arvanitis LA, Miller BG, Link CG. Quetiapine in patients with schizophrenia. A high- and low-dose double-blind comparison with placebo. Seroquel study group. Archives of General Psychiatry 1997; 54: 549–57.",,,keine Kontakte auffindbar,,Small1997,active
+611,Small 1997,2987,1997,Placebo,96,,,,,,,,,,,Small1997,control
+946,Zimbroff 1997a,3123,1997,Sertindole,144,20.85,31,117,change,original,"Zimbroff DL, Kane JM, Tamminga CA et al. Controlled, dose-response study of sertindole and haloperidol in the treatment of schizophrenia. Sertindole study group. American Journal of Psychiatry 1997; 154: 782–91",Dr Zimbroff,dan.zimbroff@pcrmg.com,"verstorben, neuer Kontakt : danieldb@jmu.edu",,Zimbroff1997,active
+946,Zimbroff 1997a,3122,1997,Placebo,73,-6.9,19.13,60,change,original,,,,,,Zimbroff1997,control
+946,Zimbroff 1997b,3121,1997,Haloperidol,137,1.48,23.3,176,change,original,,,,,,Zimbroff1997,active
+31,Beasley 1996a,70,1996,Placebo,50,,,,,,"Beasley, C. M., Jr., Sanger T, Satterlee W, Tollefson G, Tran P, Hamilton S. Olanzapine versus placebo: Results of a double-blind, fixed-dose olanzapine trial. Psychopharmacology 1996",Dr Beasley,cmbeasleyj@lilly.com,,,Beasley1996a,control
+31,Beasley 1996a,69,1996,Olanzapine,50,,,,,,,,,,,Beasley1996a,active
+32,Beasley 1996b,71,1996,Haloperidol,69,1.76,25.52,54,change,original,,,,,,Beasley1996b,active
+32,Beasley 1996b,73,1996,Placebo,68,-1.77,19.38,54,change,original,,,,,,Beasley1996b,control
+32,Beasley 1996c,72,1996,Olanzapine,133,2.73,27.43,109,change,original,,,,,,Beasley1996b,active
+560,Borison 1996,2271,1996,Placebo,55,-0.1,24.757979667836,55,change,sd estimated from mean of SDs,"Borison RL, Arvanitis LA, Miller BG. ICI 204,636, an atypical antipsychotic: Efficacy and safety in a multicenter, placebo-controlled trial in patients with schizophrenia. U.S. SEROQUEL study group. J Clin Psychopharmacol 1996",,,keine Kontakte auffindbar,,Borison1996,control
+560,Borison 1996,2272,1996,Quetiapine,54,7.2,24.757979667836,54,change,sd estimated from mean of SDs,,,,,,Borison1996,active
+923,van Kammen 1996,3070,1996,Sertindole,105,20.04,21.72,91,change,original,,,,,,VanKammen1996,active
+923,van Kammen 1996,3069,1996,Placebo,48,-0.34,11.33,41,change,original,,,,,,VanKammen1996,control
+942,Zborowski 1995a,3113,1995,Placebo,116,-0.85,24.18,78,change,original,,,,,,Zborowski1995,control
+942,Zborowski 1995a,3112,1995,Haloperidol,115,-5.23,29.51,90,change,original,"Zborowski J, Schmitz P, Staser J et al. Efficacy and safety of sertindole in a trial of schizophrenic patients. BiolPsychiatry 1995",Dr Tamminga,carol.tamminga@utsouthwestern.edu,,,Zborowski1995,active
+942,Zborowski 1995b,3114,1995,Sertindole,117,24.84,28.53,93,change,original,,,,,,Zborowski1995,active
+84,Clark 1972a,191,1972,Chlorpromazine,19,,,,,,"Clark ML, Huber WK, Sullivan J, Wood F, Costiloe JP. Evaluation of loxapine succinate in chronic schizophrenia. Diseases of the Nervous System 1972",,,keine Kontakte auffindbar,,Clark1972,active
+84,Clark 1972a,193,1972,Placebo,18,,,,,,,,,,,Clark1972,control
+84,Clark 1972b,192,1972,Loxapine,18,,,,,,,,,,,Clark1972,active
+591,Clark 1970a,2326,1970,Chlorpromazine,15,,,,,,"Clark ML, Huber WK, Sakata K, Fowles DC, Serafetinides EA. Molindone in chronic schizophrenia. clinical",,,"keine Kontakte auffindbar, Letztautor verstorben",,Clark1970,active
+591,Clark 1970a,2328,1970,Placebo,14,,,,,,Pharmacology & Therapeutics 1970,,,,,Clark1970,control
