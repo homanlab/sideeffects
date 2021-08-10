@@ -1,4 +1,8 @@
-# Side effects of antipsychotics in schizophrenia spectrum disorders
+# Examining Side Effect Variability of Antipsychotic Treatment in Schizophrenia Spectrum Disorders: A Meta-analysis of Variance
+
+## Reference
+
+Now published in Schizophrenia Bulletin, doi: https://doi.org/10.1093/schbul/sbab078
 
 ## Authors
 
